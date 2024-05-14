@@ -8,5 +8,5 @@
 
 1.Клонируйте репозиторий:
 ```
-
+git@github.com:AndreiGrom/D_z_10.1.git
 ```
