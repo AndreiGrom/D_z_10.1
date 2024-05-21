@@ -10,7 +10,7 @@ def test_get_hidden_card():
 @pytest.mark.parametrize('value,expected',[
     ('7000792289606361', '7000 79** **** 6361'),
     ('1234567890123456', '1234 56** **** 3456'),
-    ('asdfghjklqwertyu', 'asdf gh** **** rtyu')
+    ('asdfghjklqwertyu', 'asdf gh** **** rtyu'),
     ])
 
 def test_get_hidden_card_(value, expected):
