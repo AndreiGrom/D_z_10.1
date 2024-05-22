@@ -7,8 +7,20 @@ def account_details(user_input: str) -> Optional[str]:
     if user_input[-20:].isdigit():
         return user_input[:5] + "**" + user_input[-4:]
     else:
-        mask = user_input.replace(user_input[-10:], len(user_input[-10:-4]) * "*") + user_input[-4:]
-        result = mask[:-16] + " " + mask[-16:-12] + " " + mask[-12:-8] + " " + mask[-8:-4] + " " + mask[-4:]
+        mask = (
+            user_input.replace(user_input[-10:], len(user_input[-10:-4]) * "*")
+            + user_input[-4:]
+        )
+        result = (
+            mask[:-16]
+            + mask[-16:-12]
+            + " "
+            + mask[-12:-8]
+            + " "
+            + mask[-8:-4]
+            + " "
+            + mask[-4:]
+        )
         return result
 
 

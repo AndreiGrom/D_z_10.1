@@ -17,9 +17,9 @@ def test_get_hidden_card_(value, expected):
     assert get_hidden_card(value) == expected
 
 
-@pytest.mark.parametrize('value,expected', [
+@pytest.mark.parametrize('value, expected', [
     ('73654108430135874305', '**4305'),
 ])
 
 def test_returns_the_account_mask(value, expected):
-    assert returns_the_account_mask(value) != expected
+    assert returns_the_account_mask(value) == expected
