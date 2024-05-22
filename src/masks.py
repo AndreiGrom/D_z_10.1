@@ -12,4 +12,4 @@ def get_hidden_card(card_number: Union[str]) -> Union[str]:
 
 def returns_the_account_mask(account_number: Union[str]) -> Union[str]:
     """Принимает номер счета и возвращающей маску счета"""
-    return 12 * "*" + account_number[-4:]
+    return 2 * "*" + account_number[-4:]

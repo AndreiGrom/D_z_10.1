@@ -3,8 +3,8 @@ import pytest
 
 
 def test_account_details():
-    user_inp = 'Счет 73654108430135874305'
-    result = 'Счет **4305'
+    user_inp = 'Visa Platinum 7000792289606361'
+    result = 'Visa Platinum 7000 79** **** 6361'
     assert account_details(user_inp) == result
 
 

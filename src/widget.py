@@ -29,3 +29,6 @@ def format_date(date_time_str: str) -> str:
     short_date = date_time_str.split("T")[0]
 
     return str(datetime.strptime(short_date, "%Y-%m-%d").strftime("%d.%m.%Y"))
+
+
+print(account_details("Visa Platinum 7000792289606361"))
