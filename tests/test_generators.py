@@ -1,28 +1,16 @@
+from src.generators import card_number_generator,filter_by_currency,transaction_descriptions
 import pytest
 
-@pytest.fixture
-def input_dickt():
-    return [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-            {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'},
-            {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-            {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'}]
+
+def test_card_number_generator():
+    generator = card_number_generator()
+    assert next(generator) == '0000 0000 0000 0001'
+    assert next(generator) == '0000 0000 0000 0002'
+    assert next(generator) == '0000 0000 0000 0003'
 
 
-@pytest.fixture
-def state():
-    return 'EXECUTED'
-
-
-@pytest.fixture
-def ascending():
-    return True
-
-
-
-
-@pytest.fixture
-def generators_list():
-    return ([
+def test_transaction_descriptions():
+    generators_list = ([
     {
         "id": 939719570,
         "state": "EXECUTED",
@@ -84,5 +72,7 @@ def generators_list():
         "to": "Счет 14211924144426031657",
     },
 ])
-
-
+    generator = transaction_descriptions(generators_list)
+    assert next(generator) == 'Перевод организации'
+    assert next(generator) == 'Перевод со счета на счет'
+    assert next(generator) == 'Перевод со счета на счет'
