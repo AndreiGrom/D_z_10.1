@@ -17,7 +17,8 @@ def filter_by_currency(transactions_list: list[dict], currency: str) -> Generato
 def transaction_descriptions(list_inp: list[dict]) -> Generator:
     "Принимает список словарей и возвращает описание каждой операции по очереди"
     result = (v for i in list_inp for k, v in i.items() if k == "description")
-    return result
+    for i in result:
+        yield i
 
 
 def card_number_generator(start=1, stop=9999999999999999) -> Generator:
