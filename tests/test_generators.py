@@ -144,3 +144,4 @@ def test_filter_by_currency():
     generator = filter_by_currency(generators_list, "USD")
     assert next(generator)['id'] == 939719570
     assert next(generator)['id'] == 142264268
+    assert next(generator)['id'] == 895315941
