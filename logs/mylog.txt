@@ -1,0 +1,12 @@
+my_function ok. Result: 3
+my_function_eror ok. Result: 0.0
+my_function ok. Result: 3
+my_function_eror ZeroDivisionError: division by zero. Inputs: (3, 0), {}
+my_function ok. Result: 3
+my_function ok. Result: 3
+my_function_eror ZeroDivisionError: division by zero. Inputs: (3, 0), {}
+my_function ok. Result: 3
+my_function ok. Result: 3
+my_function ok. Result: 3
+my_function ok. Result: 3
+my_function_eror ZeroDivisionError: division by zero. Inputs: (3, 0), {}
