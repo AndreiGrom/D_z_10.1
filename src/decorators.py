@@ -1,9 +1,6 @@
-import functools
-import sys
 from functools import wraps
-from typing import Any,Callable, Optional
-import  os
-
+from typing import Any, Callable, Optional
+import os
 
 
 def log(filename: Optional[str] = None) -> Callable:
@@ -20,8 +17,10 @@ def log(filename: Optional[str] = None) -> Callable:
                 return result
 
             except Exception as e:
-                    log_str = f"{func.__name__} {type(e).__name__}: {e}. Inputs: {args}, {kwargs}"
-                    raise e
+                log_str = (
+                    f"{func.__name__} {type(e).__name__}: {e}. Inputs: {args}, {kwargs}"
+                )
+                raise e
 
             finally:
                 if filename:  # Запись лога в файл.
