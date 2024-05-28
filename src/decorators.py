@@ -8,7 +8,7 @@ import  os
 
 def log(filename: Optional[str] = None) -> Callable:
     """Декоратор, который будет логировать вызов функции
-    и ее результат в файл или в консоль."""
+    и ее результат  выводит в файл или в консоль."""
 
     def wrapper(func: Callable) -> Callable:
         @wraps(func)
