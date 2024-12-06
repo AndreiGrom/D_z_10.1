@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv('.env')
+api_key = os.getenv('api_key')
+
 def convert_currency(amount, from_currency, to_currency, api_key):
     # Убедитесь, что валюта поддерживается
     supported_currencies = ['USD', 'EUR']
