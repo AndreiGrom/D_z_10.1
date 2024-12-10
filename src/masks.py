@@ -1,18 +1,17 @@
-
 from typing import Union
 import logging
 
 
 logging.basicConfig(
-    filename='mask.log',
+    filename='logs/masks.log',
     filemode='a+',
     format='%(levelname)s:%(name)s:Request time: %(asctime)s',
-    level=logging.INFO,
-    datefmt='%Y-%m-%d %H:%M:%S'  # этот формат удаляет микросекунды
+    level=logging.DEBUG,
+    datefmt='%Y-%m-%d %H:%M:%S'
 )
 
-logger = logging.getLogger('mask')  # Логгер с именем 'mask'
-logger.setLevel(logging.INFO)
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
 file_handler = logging.FileHandler('logs/masks.log')
 file_formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s: %(message)s')
 file_handler.setFormatter(file_formatter)
@@ -20,18 +19,34 @@ logger.addHandler(file_handler)
 
 def get_hidden_card(card_number: Union[str]) -> Union[str]:
     """Принимает номер карты и выводит маску карты"""
-    result = card_number[0:6] + 6 * "*" + card_number[-4:]
-    result_split = (
-        result[0:4] + " " + result[4:8] + " " + result[8:12] + " " + result[12:]
-    )
-    logger.info(f'Сгенерирована маска карты: {result_split}')  # Логирование
-    return result_split
+    try:
+        if len(card_number) != 16 or not card_number.isdigit():
+            logger.error(f'Некорректный номер карты: {card_number}')
+            return "Ошибка: некорректный номер карты"
+
+        result = card_number[0:6] + 6 * "*" + card_number[-4:]
+        result_split = (
+            result[0:4] + " " + result[4:8] + " " + result[8:12] + " " + result[12:]
+        )
+        logger.info(f'Сгенерирована маска карты: {result_split}')  # Логирование успешного случая
+        return result_split
+    except Exception as e:
+        logger.error(f'Ошибка в get_hidden_card: {str(e)}')  # Логирование ошибки
+        return "Ошибка: произошла ошибка в обработке номера карты"
 
 def returns_the_account_mask(account_number: Union[str]) -> Union[str]:
     """Принимает номер счета и возвращает маску счета"""
-    masked_account = 2 * "*" + account_number[-4:]
-    logger.info(f'Сгенерирована маска счета: {masked_account}')
-    return masked_account
+    try:
+        if len(account_number) < 4 or not account_number.isdigit():
+            logger.error(f'Некорректный номер счета: {account_number}')
+            return "Ошибка: некорректный номер счета"
+
+        masked_account = 2 * "*" + account_number[-4:]
+        logger.info(f'Сгенерирована маска счета: {masked_account}')  # Логирование успешного случая
+        return masked_account
+    except Exception as e:
+        logger.error(f'Ошибка в returns_the_account_mask: {str(e)}')  # Логирование ошибки
+        return "Ошибка: произошла ошибка в обработке номера счета"
 
 def main():
     # Пример использования функций
