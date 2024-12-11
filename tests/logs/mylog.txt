@@ -1,6 +1,0 @@
-example_function TypeError: Что-то пошло не так. Inputs: (2, 10), {}
-example_function ok. Result: 6
-example_function TypeError: Что-то пошло не так. Inputs: (2, 10), {}
-example_function TypeError: Что-то пошло не так. Inputs: (2, 10), {}
-example_function ok. Result: 6
-example_function TypeError: Что-то пошло не так. Inputs: (2, 10), {}
