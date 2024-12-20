@@ -1,6 +1,6 @@
+import os
 from functools import wraps
 from typing import Any, Callable, Optional
-import os
 
 
 def log(filename: Optional[str] = None) -> Callable:

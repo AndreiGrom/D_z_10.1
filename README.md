@@ -49,3 +49,64 @@ pip install requests
 
 2.Чтобы запустить тесты с оценкой 
 покрытия в терменале ввести команду "pytest --cov".
+ feature/homework_10_1
+
+
+```markdown
+# Финансовые операции
+
+Этот проект содержит функции для считывания финансовых операций из CSV и Excel файлов.
+
+## Установка
+
+Для начала, убедитесь, что у вас установлены необходимые зависимости. Используйте следующую команду:
+
+```bash
+pip install pandas openpyxl
+```
+
+## Функции
+
+Проект включает следующие функции для чтения финансовых операций:
+
+### `read_transactions_from_csv(file_path: str) -> list[dict]`
+
+Эта функция считывает финансовые операции из указанного CSV-файла.
+
+- **Аргумент**:
+  - `file_path` (str): Путь к CSV-файлу.
+  
+- **Возвращает**:
+  - `list[dict]`: Список словарей с транзакциями.
+
+#### Пример использования:
+
+```python
+#transactions = read_transactions_from_csv('path/to/your/transactions.csv')
+#print(transactions)
+```
+
+### `read_transactions_from_excel(file_path: str) -> list[dict]`
+
+Эта функция считывает финансовые операции из указанного Excel-файла.
+
+- **Аргумент**:
+  - `file_path` (str): Путь к Excel-файлу.
+  
+- **Возвращает**:
+  - `list[dict]`: Список словарей с транзакциями.
+
+#### Пример использования:
+
+```python
+#transactions = read_transactions_from_excel('path/to/your/transactions.xlsx')
+#print(transactions)
+```
+
+## Примечания
+
+- Убедитесь, что ваши CSV и Excel файлы содержат корректные данные и соответствуют ожидаемому формату.
+- Для работы с Excel файлами необходима библиотека `openpyxl`.
+
+```
+
