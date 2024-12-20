@@ -82,8 +82,8 @@ pip install pandas openpyxl
 #### Пример использования:
 
 ```python
-transactions = read_transactions_from_csv('path/to/your/transactions.csv')
-print(transactions)
+#transactions = read_transactions_from_csv('path/to/your/transactions.csv')
+#print(transactions)
 ```
 
 ### `read_transactions_from_excel(file_path: str) -> list[dict]`
@@ -99,8 +99,8 @@ print(transactions)
 #### Пример использования:
 
 ```python
-transactions = read_transactions_from_excel('path/to/your/transactions.xlsx')
-print(transactions)
+#transactions = read_transactions_from_excel('path/to/your/transactions.xlsx')
+#print(transactions)
 ```
 
 ## Примечания
