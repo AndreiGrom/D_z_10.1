@@ -1,8 +1,9 @@
-import json
 import csv
-import pandas as pd
+import json
 import re
 from collections import Counter
+
+import pandas as pd
 
 
 def filter_transactions_by_description(transactions: list, search_string: str) -> list:
